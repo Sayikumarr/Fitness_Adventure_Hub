@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post Title</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Add any additional stylesheets or scripts here -->
+    <style>
+      /* Reset some default styles */
+      body,
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Style the header */
+      .blog-header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .blog-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .blog-date {
+        font-size: 14px;
+      }
+
+      /* Style the main content */
+      .blog-main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .blog-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .blog-content {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 20px;
+      }
+
+      /* Style the footer */
+      .blog-footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .back-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="blog-header">
+      <h1 class="blog-title">Blog Post Title</h1>
+      <p class="blog-date">
+        Published on: <time datetime="2022-07-07">7 July 2022</time>
+      </p>
+    </header>
+
+    <main class="blog-main">
+      <article class="blog-article">
+        <img
+          src="{% static 'assets/images/blog-1.jpg' %}"
+          alt="Blog Post Image"
+          class="blog-image"
+        />
+        <p class="blog-content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id
+          ipsum pellentesque lectus dapibus condimentum curabitur eget risus
+          quam. In hac habitasse platea dictumst.
+        </p>
+      </article>
+    </main>
+
+    <footer class="blog-footer">
+      <a href="blog-list.html" class="back-link">Back to Blog List</a>
+    </footer>
+  </body>
+</html>

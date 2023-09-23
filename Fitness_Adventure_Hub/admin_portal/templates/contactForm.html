@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block cssStyles %}
+<style>
+    /* Form Styles */
+.form-started {
+    background-color: #292626;
+    padding: 50px 0;
+}
+
+body{
+    background-color: #292626;
+}
+
+.container-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.form-group-contact {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.btn-primary {
+    background-color: var(--rich-black-fogra-29-1);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-primary:hover {
+    background-color: white;
+    color:var(--rich-black-fogra-29-1);
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    background-color: var(--coquelicot);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Additional Styling */
+.section-title-form {
+    color: var(--rich-black-fogra-29-1);
+}
+
+.section-text-form {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Responsive Design (adjust as needed) */
+@media (max-width: 768px) {
+    .container-form {
+        padding: 10px;
+    }
+}
+
+/* Add any additional styling you desire here */
+
+
+</style>
+{% endblock cssStyles %}
+
+{% block mainContent %}
+<!-- Add this form anywhere within your HTML code, preferably in the desired section -->
+<br>
+<br>
+<br>
+<section class="section get-started form-started" aria-label="get started">
+    <div class="container-form">
+        <div class="jumbotron">
+
+        <h2 class="h2 section-title-form text-center">Get Started</h2>
+
+        <p class="section-text-form text-center">Ready to start your fitness journey with us? Fill out the form below.</p>
+        
+        <br>
+        
+        <!-- Get Started Form -->
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group-contact">
+                <label for="name">Name:</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group-contact">
+                <label for="email">Email:</label>{{ form.email }}
+            </div>
+
+            <div class="form-group-contact">
+                <label for="phone">Phone Number:</label>{{ form.phone }}
+            </div>
+
+            <div class="form-group-contact">
+                <label for="interest">Fitness Goals/Interests:</label>{{ form.interest }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </div>
+</section>
+
+{% endblock mainContent %}

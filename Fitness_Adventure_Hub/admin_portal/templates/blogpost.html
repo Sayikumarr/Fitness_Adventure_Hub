@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block cssStyles %}
+{% load static %}
+<style>
+
+
+body{
+    background-color: #292626;
+}
+
+.container-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+button.btn-primary {
+    background-color: var(--rich-black-fogra-29-1);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-primary:hover {
+    background-color: white;
+    color:var(--rich-black-fogra-29-1);
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    background-color: var(--coquelicot);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+</style>
+{% endblock cssStyles %}
+
+{% block mainContent %}
+<section class="section get-started form-started" aria-label="get started">
+    <div class="container-form">
+        <div class="jumbotron">
+    <div class="blog-header">
+      <h1 class="blog-title">{{blog.title}}</h1>
+      <p class="blog-date">
+        Published on: <time datetime="{{blog.publication_date}}">{{blog.publication_date}}</time>
+      </p>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <main class="blog-main">
+      <article class="blog-article">
+        <img
+          src="{{blog.image.url}}"
+          alt="Blog Post Image"
+          class="blog-image"
+          style="height: 50%;margin: auto;"
+        />
+        <p class="blog-content">
+          {{blog.content}}
+        </p>
+      </article>
+    </main>
+
+    <div class="blog-footer">
+      <button href="blog-list.html" class="btn btn-primary">Back to Blog List</button>
+    </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock mainContent %}
