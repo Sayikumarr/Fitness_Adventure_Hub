@@ -5,7 +5,7 @@ Fitness Adventure Hub is a Django-based web application that provides fitness-re
 
 ## Live Link
 
-[Live Demo](https://www.example.com)
+[Live Demo](https://iamshareef.in/)
 
 ## Screenshots
 
