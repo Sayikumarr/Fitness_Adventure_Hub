@@ -3,6 +3,40 @@
 
 Fitness Adventure Hub is a Django-based web application that provides fitness-related content, activities, and blogs. This README file will help you get started with setting up and running the project.
 
+## Live Link
+
+[Live Demo](https://www.example.com)
+
+## Screenshots
+
+### Homepage
+
+![Homepage Screenshot](screenshots/homepage.png)
+
+### Contact Form
+
+![Contact Form Screenshot](screenshots/contact-form.png)
+
+### Blog Post
+
+![Blog Post Screenshot](screenshots/blog-post.png)
+
+## Developer Profiles
+
+You can connect with the Me or contributors of this project on the following platforms:
+
+- [LinkedIn](https://www.linkedin.com/in/sayikumarr/)
+- [GitHub](https://github.com/sayikumarr)
+- [Instagram](https://www.instagram.com/sayikumarr/)
+- [Twitter](https://twitter.com/masaikumar789/)
+
+Feel free to reach out for questions, collaboration, or just to say hello!
+
+## Getting Started
+
+Instructions on how to get a copy of the project up and running on a local machine for development and testing purposes.
+
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
