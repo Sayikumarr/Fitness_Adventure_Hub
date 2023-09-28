@@ -1,101 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Post Title</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Add any additional stylesheets or scripts here -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
     <style>
-      /* Reset some default styles */
-      body,
-      h1,
-      p {
-        margin: 0;
-        padding: 0;
-      }
+        /* Style for the modal container */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
 
-      /* Style the header */
-      .blog-header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-      }
+        /* Style for the modal content */
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
 
-      .blog-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-
-      .blog-date {
-        font-size: 14px;
-      }
-
-      /* Style the main content */
-      .blog-main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .blog-image {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-
-      .blog-content {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-top: 20px;
-      }
-
-      /* Style the footer */
-      .blog-footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-      }
-
-      .back-link {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .back-link:hover {
-        text-decoration: underline;
-      }
+        /* Style for the close button */
+        .close {
+            color: #888;
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
-  </head>
-  <body>
-    <header class="blog-header">
-      <h1 class="blog-title">Blog Post Title</h1>
-      <p class="blog-date">
-        Published on: <time datetime="2022-07-07">7 July 2022</time>
-      </p>
-    </header>
+</head>
+<body>
 
-    <main class="blog-main">
-      <article class="blog-article">
-        <img
-          src="{% static 'assets/images/blog-1.jpg' %}"
-          alt="Blog Post Image"
-          class="blog-image"
-        />
-        <p class="blog-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id
-          ipsum pellentesque lectus dapibus condimentum curabitur eget risus
-          quam. In hac habitasse platea dictumst.
-        </p>
-      </article>
-    </main>
+<!-- Button to open the modal -->
+<button onclick="openModal()">Open Modal</button>
 
-    <footer class="blog-footer">
-      <a href="blog-list.html" class="back-link">Back to Blog List</a>
-    </footer>
-  </body>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Modal Title</h2>
+        <p>This is the modal content.</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript functions to open and close the modal
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+</script>
+
+</body>
 </html>
