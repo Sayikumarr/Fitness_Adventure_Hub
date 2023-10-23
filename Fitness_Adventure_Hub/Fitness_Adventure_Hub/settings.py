@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'admin_portal',
+    'maintenance_mode',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'maintenance_mode.middleware.MaintenanceModeMiddleware',
+    'admin_portal.middleware.ShowDelayTemplateMiddleware',
 ]
 
 ROOT_URLCONF = 'Fitness_Adventure_Hub.urls'
@@ -135,3 +138,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'iamshareef.in'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'contact@iamshareef.in'
+EMAIL_HOST_PASSWORD = '+yHe?z%ibial'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'contact@iamshareef.in'
