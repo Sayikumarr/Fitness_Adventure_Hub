@@ -1,0 +1,157 @@
+<html>
+<head>
+    <style>
+        body {
+          background-color: #3498db; /* A nice shade of blue */
+          font-family: "Arial", sans-serif;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+    
+        h1 {
+          color: #ffffff;
+          font-size: 36px;
+        }
+    
+        p {
+          color: #333;
+          font-size: 20px;
+        }
+    
+        #quote {
+          margin-top: 50px;
+          font-style: italic;
+          font-size: 24px;
+        }
+    
+        #timer {
+          margin-top: 20px;
+          font-size: 36px;
+          color: #ffffff;
+        }
+    
+        #message {
+          margin-top: 20px;
+          font-size: 18px;
+          color: #ffffff;
+        }
+    
+        #button {
+          display: none;
+          background-color: #27ae60; /* A nice shade of green */
+          color: #ffffff;
+          padding: 10px 20px;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+        }
+    
+        #button:hover {
+          background-color: #2ecc71; /* A slightly lighter green on hover */
+        }
+      </style>
+</head>
+<body>
+    <h1 id="heading"></h1>
+  <p id="quote"></p>
+  <p id="timer"></p>
+  <p id="message">This is a Security Check. Please wait for 5 seconds while we verify your identity.</p>
+  <button id="button" onclick="redirect()">Click Here</button>
+  <script>
+
+    var csrfToken = "{{ csrf_token|escapejs }}";
+    var quotes = [
+    "Be kind to yourself and others.",
+    "Help those in need and make a difference.",
+    "Spread love and positivity wherever you go.",
+    "Learn new things and share your knowledge.",
+    "Protect the environment and respect all living beings.",
+    "Stand up for what is right and fight injustice.",
+    "Follow your dreams and never give up.",
+    "Practice empathy and understanding.",
+    "Be a source of inspiration for others.",
+    "Give without expecting anything in return.",
+    "Cherish the moments that make you smile.",
+    "Listen to your heart and follow your passion.",
+    "Make the world a better place through your actions.",
+    "Treat every day as an opportunity to grow.",
+    "Change the world by being the change you wish to see.",
+    "Always strive for excellence in everything you do."
+  ];
+    var headings = [
+        "Do Good Things and Save Humanity",
+        "Inspire Positive Change Every Day",
+        "Spread Love and Kindness",
+        "Make the World a Better Place",
+        "Embrace the Power of Good Deeds",
+        "Stand Up for Justice and Equality",
+        "Empower Yourself to Empower Others",
+        "Shine Bright with Acts of Goodness",
+        "Be the Light in Someone's Life",
+        "Lead with Compassion and Purpose"
+      ];
+
+    function showQuote() {
+      var index = Math.floor(Math.random() * quotes.length)
+      var quote = quotes[index];
+      var quoteElement = document.getElementById("quote");
+      quoteElement.innerText = quote;
+    }
+
+    function showHeading() {
+        var index = Math.floor(Math.random() * headings.length);
+        var heading = headings[index];
+        var headingElement = document.getElementById("heading");
+        headingElement.innerText = heading;
+      }
+
+    function showTimer() {
+      var timerElement = document.getElementById("timer");
+      timerElement.innerText = "5";
+      var timeLeft = 5;
+      var interval = setInterval(function() {
+        timeLeft--;
+        timerElement.innerText = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          document.getElementById("button").style.display = "block";
+          document.getElementById("message").innerText = "If you are not redirected automatically, please click on the button below.";
+          setTimeout(redirect, 1000);
+        }
+      }, 1000);
+    }
+
+
+    function redirect() {
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", window.location.href);
+      
+        var csrfInput = document.createElement("input");
+        csrfInput.setAttribute("type", "hidden");
+        csrfInput.setAttribute("name", "csrfmiddlewaretoken");
+        csrfInput.setAttribute("value", csrfToken);
+        form.appendChild(csrfInput);
+      
+        var input = document.createElement("input");
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "pass");
+        input.setAttribute("value", "true");
+      
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }      
+    
+    showHeading();
+    showQuote();
+    showTimer();
+  </script>
+</body>
+</html>
