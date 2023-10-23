@@ -140,10 +140,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'iamshareef.in'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'contact@iamshareef.in'
-EMAIL_HOST_PASSWORD = '+yHe?z%ibial'
-EMAIL_USE_SSL = True
-DEFAULT_FROM_EMAIL = 'contact@iamshareef.in'
